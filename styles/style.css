@@ -27,7 +27,8 @@ ul,
 ol,
 li,
 blockquote,
-fieldset {
+fieldset,
+content {
   margin: 0;
   padding: 0;
 }
@@ -48,4 +49,389 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.page{
+  display: flex;
+  padding:  133px 30px 133px;
+  width: 1200px;
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; 
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Две колонки */
+  
+  gap: 20px; /* Расстояние между колонками */
+
+  width: 1140px;
+  align-content: start;
+
+}
+
+.result,
+.content__details {
+  height: 100%; /* Растягиваем блоки по высоте родителя */
+}
+
+.result{
+  grid-area: result;
+  grid-column: 1 / 2;
+  grid-row: 1;
+  height: 100%;
+  padding-top: 157px;
+
+}
+
+
+
+.content__list-container{
+  height: 298px;
+  overflow-y: auto;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between; /* Равномерное распределение */
+  align-items: baseline; /* Выравниваем по вертикали */
+  width: 100%;
+  gap: 10px; /* Добавляем промежутки */
+  padding-top: 27p;
+  
+}
+
+
+.content__details {
+  grid-area: content__details;
+  grid-column: 2 / 2;
+  grid-row: 1;
+  height: 100%;
+  margin-left: 10px;
+  margin-top: 78px;
+  display: flex;
+  flex-direction: column;
+ /* Распределение контента */
+  width: 100%; /* Растянуть на всю доступную ширину */
+  height: 100%; /* Растянуть на всю доступную высоту */
+  padding: 0; 
+}
+/*
+    
+*/
+.result__video-container {
+  width: 711px;
+  height: 386px;
+  overflow: hidden;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content__list {
+  display: grid;
+  gap: 30px; /* Устанавливает отступы между элементами */
+}
+
+.content__video-card{
+  display: grid;
+  grid-auto-flow: column; /* Элементы располагаются в строку */
+  align-items: start; /* Прижимаем к началу по дополнительной оси */
+  justify-content: space-between;
+  
+}
+
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: auto;/* Растянуть изображение на всю высоту родительского контейнера */
+  object-fit: cover; /* Заполнить весь контейнер без искажений */
+  object-position: center; /* Выровнять центр изображения */
+}
+
+.content__video-card-description-container {
+  flex-grow: 1; /* Занимает всё доступное пространство */
+  display: flex;
+  flex-direction: column; /* Оставляет элементы внутри в колонку */
+  justify-content: space-between; /* Если нужно распределить контент */
+}
+
+.search-form__fieldset-title{
+  font-family: Fira Sans, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.6px;
+  letter-spacing: 0;
+  width: 225px;
+}
+
+.search-form__fieldset:not(:first-of-type) {
+
+  padding-left: 12px;
+
+}
+
+.title{
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 70.5px;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+}
+
+.content__accent{
+  color:#545050;
+}
+
+.content__card-link {
+  text-decoration: none; /* Убираем подчёркивание */
+  color: #fff; /* Замените на нужный цвет */
+
+}
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30px;
+  color: #ffffff; /* Цвет текста */
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Ограничение до 2 строк */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  overflow: hidden; /* Обрезаем лишний текст */
+  text-overflow: ellipsis; /* Добавляем многоточие */
+  text-transform: uppercase;
+}
+
+.content__video-card-description{
+  font-family: Fira Sans, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16.2px;
+  letter-spacing: 0%;
+  line-height: 25px;
+  display: -webkit-box; /* Поддержка многолинейного отображения */
+  -webkit-line-clamp: 3; /* Ограничение до 3 строк */
+  -webkit-box-orient: vertical; /* Ориентация по вертикали */
+  overflow: hidden; /* Обрезаем лишний текст */
+}
+
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
+.search-form {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 27px;
+  padding-top: 12px;
+  
+}
+/*
+    padding-top: 17px;
+*/
+.search-form__checkbox-list {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-top: 6px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-form__label{
+  display: flex;
+  padding-top: 2px;
+}
+
+.search-form__textfield{
+  font-family: Fira Sans, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+  letter-spacing: 0%;
+  padding: 0;
+  margin: 0;
+}
+
+input{
+  background-color: transparent;
+  
+}
+
+input:not(:placeholder-shown) {
+  color: #FFFFFFB2;
+
+}
+
+.search-form__textfield{
+  outline: none; 
+  border: none;
+  border-top: 1px solid #fff; /* Верхняя граница */
+  border-bottom: 1px solid #fff; /* Нижняя граница */
+  border-left: none;
+  border-right: none;
+  padding: 10px 15px; /* Внутренние отступы */
+  font-size: 16px;
+  background-color: transparent; /* Фон прозрачный */
+  width: 100%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 0px;
+  margin-top: 5px;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff; /* Белая рамка */
+  position: relative;
+  cursor: pointer;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px; /* На 1px меньше, чем сам чекбокс */
+  height: 15px;
+  background-color: white; /* Белый фон */
+  transform: translate(-50%, -50%) scale(0); /* Прячем */
+  transition: transform 0.2s ease;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  transform: translate(-50%, -50%) scale(1); /* Показываем внутренний квадрат */
+}
+
+.search-form__label-text{
+  margin-left: 4px;
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+  letter-spacing: 0%;
+
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button{
+  background: transparent; /* Прозрачный фон */
+  color: #fff; /* Белый цвет текста */
+  border: 1px solid #fff; /* Белая рамка */
+  display: inline-block;
+  text-align: center;
+  cursor: pointer; /* Курсор в виде указателя */
+  transition: 0.3s;
+  width: 194px;
+  font-family: Fira Sans Condensed, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.6px;
+  letter-spacing: 0%;
+  text-align: center;
+  height: 34px;
+
+}
+
+.search-form__submit-button{
+  margin-top: auto;
+}
+
+.more-button{
+  width: 99.5%;
+  margin-top: 30px;
+}
+
+.result__video-container,
+.content__list-container {
+  position: relative;
+}
+
+.search-form__textfield:active{
+  outline: none; 
+  border: none;
+  border: 1px solid #fff; /* Верхняя граница */
+  padding: 10px 15px; /* Внутренние отступы */
+  font-size: 16px;
+  background-color: transparent; /* Фон прозрачный */
+  width: 100%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 0px;
+  margin-top: 5px;
+}
+
+.search-form__label:active .search-form__label-text {
+  text-decoration: none;
+}
+
+button:active{
+  background-color: #545050;
+}
+
+button:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-form__textfield:focus-visible{
+  border: solid 1px #fff;
+  margin: 1px;
+}
+
+.search-form__textfield:focus-visible{
+  outline: 1px solid white;
+  outline-offset: 1px;
+
+  border: none;
+  border-top: 1px solid #fff; /* Верхняя граница */
+  border-bottom: 1px solid #fff; /* Нижняя граница */
+  border-left: none;
+  border-right: none;
+  padding: 10px 15px; /* Внутренние отступы */
+  font-size: 16px;
+  background-color: transparent; /* Фон прозрачный */
+  width: 100%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 0px;
+  margin-top: 5px;
+}
+
+.content__video-card:active{
+  background-color: #545050;
+}
+
+.content__video-card:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  
+}
+
+.content__video-card:focus-visible{
+  border: solid 1px #fff;
 }
